@@ -10,7 +10,7 @@ def get_status(user_id):
         "user_ids": user_id,
         "v": 5.92,
         "fields": "online",
-        "access_token": os.environ["VK_ACCOUNT_TOKEN"],
+        "access_token": os.environ["ACCOUNT_TOKEN"],
     }
     url = "https://api.vk.com/method/users.get"
     user_info = requests.post(url, params=params)
@@ -18,7 +18,7 @@ def get_status(user_id):
 
 
 def sms_sender(sms_text):
-    account_sid = os.environ["TWILIO_ACCOUNT_SID"]
+    account_sid = os.environ["ACCOUNT_SID"]
     auth_token = os.environ["TWILIO_ACCOUNT_TOKEN"]
     client = Client(account_sid, auth_token)
 
